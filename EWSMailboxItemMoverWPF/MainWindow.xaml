@@ -1,0 +1,49 @@
+﻿<Window x:Class="EWSMailboxItemMover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EWSMailboxItemMoverWPF"
+        mc:Ignorable="d"
+        Title="Edit Mailbox" Height="350" Width="525">
+    <TabControl>
+        <TabItem Name="MailboxConfig" Header="Mailbox Config">
+    <Grid VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="5">Load Config File</TextBlock>
+        <Button Margin="5" Grid.Column="1" HorizontalAlignment="Left" Name="BrowseForUser" Click="BrowseForUser_Click">Browse</Button>
+        <TextBlock Margin="5" Grid.Row="1">Mailbox To Connect to</TextBlock>
+        <TextBox Name="mailboxTB" Grid.Row="1" Grid.Column="1" Margin="5" />
+        <TextBlock Margin="5" Grid.Row="2">Mailbox Refresh Interval (secs)</TextBlock>
+        <TextBox Name="mailboxIntervalTB" Grid.Row="2" Grid.Column="1" Margin="5"/>
+        <Button Name="Save" Grid.Row="2" Grid.Column="2" Margin="5" Click="Save_Click">Save</Button>
+        
+        <TextBlock Name="errorsTB" Grid.Row="3" Grid.ColumnSpan="3" Foreground="Red" Margin="5"/>
+    </Grid>
+        </TabItem>
+        <TabItem Name="Rules" Header="Rules">
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Name="BtnLoadRules" Click="BtnLoadRules_Click" HorizontalAlignment="Left" Margin="5">Load Rules</Button>
+                <ListView Name="LVRules" Grid.Row="1" Margin="5">
+                    
+                </ListView>
+                <TextBlock Name="TBRulesErrors" Grid.Row="2" Margin="5"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

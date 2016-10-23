@@ -1,0 +1,18 @@
+﻿{
+  "someRules": [
+    {
+      "filter": "FROM",
+      "filterDetail": [ "@teksystems.ca", "@teksystems.com" ],
+      "action": "MOVE",
+      "recipientDetails": [ "\\Jobs" ],
+      "stopProcessingMoreRules": "TRUE"
+    },
+    {
+      "filter": "FROM",
+      "filterDetail": [ "@dmjsystems.co.uk" ],
+      "action": "MOVE",
+      "recipientDetails": [ "\\Family" ],
+      "stopProcessingMoreRules": "TRUE"
+    }
+  ]
+}
