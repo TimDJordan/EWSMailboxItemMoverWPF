@@ -11,10 +11,6 @@ namespace Shared
     }
     class rules
     {
-        public List<aRule> someRules { get; set; }
-    }
-    class aRule
-    {
         public string filter { get; set; }
         public List<string> filterDetail { get; set; }
         public string action { get; set; }

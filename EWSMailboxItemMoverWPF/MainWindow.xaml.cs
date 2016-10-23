@@ -109,7 +109,15 @@ namespace EWSMailboxItemMover
             {
                 // Open document 
                 rulesFileName = dlg.FileName;
-                theseRules = (Shared.rules)JsonConvert.DeserializeObject(File.ReadAllText(rulesFileName),typeof(Shared.rules));
+                try
+                {
+                    theseRules = JsonConvert.DeserializeObject<List<Shared.rules>>(File.ReadAllText(rulesFileName));
+                }
+                catch (Exception ex)
+                {
+                    TBRulesErrors.Foreground = new SolidColorBrush(Colors.Red);
+                    TBRulesErrors.Text = ex.InnerException.Message.ToString();
+                }
                 
             }
         }

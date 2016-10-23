@@ -1,5 +1,5 @@
-﻿{
-  "someRules": [
+﻿
+  [
     {
       "filter": "FROM",
       "filterDetail": [ "@teksystems.ca", "@teksystems.com" ],
@@ -15,4 +15,4 @@
       "stopProcessingMoreRules": "TRUE"
     }
   ]
-}
+
